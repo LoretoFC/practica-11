@@ -1,0 +1,51 @@
+<script>
+    // Datos
+    let nombre = prompt("Ingrese el nombre completo");
+    let dias_trabajados = parseInt(prompt("Dias trabajados"));
+    let antiguedad = parseInt(prompt("Ingrese la antiguedad del empleado"));
+    let sueldo_base = 15000;
+    let bono = 1000;
+    let sueldo_quincenal = (sueldo_base / 15) * dias_trabajados;
+    let sueldo_final = sueldo_quincenal;
+
+    if (antiguedad >= 10) {
+        sueldo_final = sueldo_quincenal + bono;
+    } else {
+        bono = 0;
+    }
+
+    document.write("<div style='text-align: left; margin: 10px 0; font-family: sans-serif;'>");
+    document.write("<b>Nombre:</b> Francisco Castellanos Loreto<br>");
+    document.write("<b>No. de Control:</b> 23320783");
+    document.write("</div>");
+
+    // Inicio de la tabla
+    document.write("<table border='1' style='border-collapse: collapse; text-align: center; margin: 20px auto; border-color: #b71c1c;'>");
+    
+    // Encabezados
+    document.write("<tr style='background-color: #161616; color: #ffffff; border-bottom: 2px solid #d32f2f;'>");
+    document.write("<th>No.</th><th>Nombre</th><th>Días Trab.</th><th>Sueldo Prop.</th><th>Antigüedad</th><th>Bono</th><th>Sueldo Total</th>");
+    document.write("</tr>");
+
+    // Fila 1: Datos ingresados por el usuario
+    document.write("<tr>");
+    document.write("<td>1</td>");
+    document.write("<td><b>" + nombre + "</b></td>");
+    document.write("<td>" + dias_trabajados + "</td>");
+    document.write("<td>$" + sueldo_quincenal + "</td>");
+    document.write("<td>" + antiguedad + " años</td>");
+    document.write("<td>$" + bono + "</td>");
+    document.write("<td style='color: #b71c1c;'><b>$" + sueldo_final + "</b></td>");
+    document.write("</tr>");
+
+    // Filas 2, 3 y 4: Vacías usando un for
+    for (let i = 2; i <= 4; i++) {
+        document.write("<tr>");
+        document.write("<td>" + i + "</td>");
+        document.write("<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>");
+        document.write("</tr>");
+    }
+
+    // Cierre de la tabla
+    document.write("</table>");
+</script>
